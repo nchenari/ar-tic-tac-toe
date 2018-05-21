@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">TTT</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-small-and-down">
+                <li><a href="#">AR Marker</a></li>
+                <li><a href="#">AR Tic Tac Toe</a></li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">AR Marker</a></li>
+        <li><a href="#">AR Tic Tac Toe</a></li>
+    </ul>
+    <div class="container tic-tac-toe">
+        <div class="row">
+            <div id="one" class="col s4 size"><p>Column 1</p></div>
+            <div id="two" class="col s4 size"><p>Column 2</p></div>
+            <div id="three" class="col s4 size"><p>Column 3</p></div>
+        </div>
+        <div class="row">
+            <div id="four" class="col s4 size"><p>Column 4</p></div>
+            <div id="five" class="col s4 size"><p>Column 5</p></div>
+            <div id="six" class="col s4 size"><p>Column 6</p></div>
+        </div>
+        <div class="row">
+            <div id="seven" class="col s4 size"><p>Column 7</p></div>
+            <div id="eight" class="col s4 size"><p>Column 8</p></div>
+            <div id="nine" class="col s4 size"><p>Column 9</p></div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+       
+    </script>
+</body>
+</html>

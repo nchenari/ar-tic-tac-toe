@@ -1,0 +1,65 @@
+/* Navbar Styles
+____________________________________*/
+nav ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 80px;
+}
+
+.sidenav {
+    width: 220px;
+}
+
+/* Traditional Tic Tac Toe
+____________________________________*/
+p {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+    
+}
+
+.tic-tac-toe {
+    padding-top: 21px;
+}
+.row {
+    margin-bottom: 0;
+}
+
+.size {
+    height: 30vh;
+    background-color: peachpuff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid white;
+}
+
+/* Final Media Queries
+____________________________________*/
+@media only screen and (min-width: 601px) {
+    nav a.sidenav-trigger {
+        display: none;
+    }
+
+    .container {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 601px) {
+    nav .brand-logo {
+        left: 60px !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: 0; 
+        -webkit-transform: translateX(0); 
+        transform: translateX(0);  
+    }
+}
+
