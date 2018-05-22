@@ -21,6 +21,7 @@ $(document).ready(function() {
 
     // session variables
     var currentPlayer = X; // X starts the game 
+    var withComp = true;
     var gameOver = false;
 
     var currPosition; // number
@@ -39,20 +40,13 @@ $(document).ready(function() {
         console.log("square on board clicked");
         elemCurrPosition = $(this);
         var posString = elemCurrPosition.attr('id');
-        
         // convert position string from id to number
         position = parseInt(posString);
         console.log("position string: " + posString);
 
-        play(position);
+        play();
         
     });
-
-    function displayTurn() {
-        console.log(((currentPlayer == X)? 'X': 'O') + '\'s turn.');
-        displayInstructions(((currentPlayer == X)? 'X': 'O') + '\'s turn.');
-
-    }
 
     function play() {
 
@@ -61,15 +55,17 @@ $(document).ready(function() {
             return;
         }
 
+        console.log("play was a success");
+
         // record on map either 1 (for X) or -1 (for O) based on currentPlayer
         map[position] = currentPlayer;
         console.log(map);
         
         // draw player symbol at position
         if (currentPlayer == X) {
-            drawX(position);
+            drawX();
         } else if (currentPlayer == O) {
-            drawO(position);
+            drawO();
         }
 
         // check to see if winning move
@@ -92,9 +88,73 @@ $(document).ready(function() {
         // flip from current player
         currentPlayer *= -1; 
 
-        console.log("play was a success");
+        // check if playing with computer
+        if (withComp == true) {
+
+            compPlay();
+        } else {
+
+            displayTurn();
+        }
+        
+    }
+
+    function compPlay() {
+        var compPosition = randomOpenPos();
+        console.log("computer randomly chosen position: " + compPosition);
+
+        // record on map either 1 (for X) or -1 (for O) based on currentPlayer for randomly selected computer position
+        map[compPosition] = currentPlayer;
+        console.log(map);
+        
+        // draw computer symbol at position
+        draw(compPosition);
+
+        // check to see if winning move
+        var winCheck = checkWin(currentPlayer);
+        console.log("win check: " + winCheck + " (0 is not a win)");
+
+        if (winCheck != 0) {
+            gameOver = true;
+            console.log(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
+            displayInstructions(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
+            return;
+        } else if (map.indexOf(BLANK) == -1) {
+            gameOver = true;
+            console.log("tie! game over.");
+            displayInstructions("tie! game over.");
+            return;
+        }
+
+        // flip from current player
+        currentPlayer *= -1; 
 
         displayTurn();
+    }
+
+    function randomOpenPos() {
+        var openIndexes = [];
+
+        // iterate through map and find all BLANK positions (O)
+        for (var i = 0; i < map.length; i++) {
+            if (map[i] == BLANK) {
+                // append index of map to blankIndexes array
+                openIndexes.push(i)
+            }
+        }
+
+        // return a random open index
+        return openIndexes[Math.floor(Math.random() * openIndexes.length)];
+    }
+
+
+
+    function draw(position) {
+        var elem = $("<h1></h1>").text(((currentPlayer == X) ? 'X': 'O'));
+
+        // apend to element at position given
+        $(".tic-tac-toe").find('[id^="' + position + '"]').append(elem);
+
     }
 
     function drawX() {
@@ -129,6 +189,12 @@ $(document).ready(function() {
 
         // did not win
         return 0;
+    }
+
+    function displayTurn() {
+        console.log(((currentPlayer == X)? 'X': 'O') + '\'s turn.');
+        displayInstructions(((currentPlayer == X)? 'X': 'O') + '\'s turn.');
+
     }
 
     function displayInstructions(str) {
