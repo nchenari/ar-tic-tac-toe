@@ -30,7 +30,7 @@ p {
 }
 
 .size {
-    height: 30vh;
+    height: 29vh;
     background-color: peachpuff;
     display: flex;
     align-items: center;
@@ -38,7 +38,17 @@ p {
     border: 10px solid white;
 }
 
-/* Final Media Queries
+/* AR Tic Tac Toe
+____________________________________*/
+.ar-nav {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    text-align: center; 
+    z-index: 1;
+}
+
+/* Media Queries
 ____________________________________*/
 @media only screen and (min-width: 601px) {
     nav a.sidenav-trigger {
