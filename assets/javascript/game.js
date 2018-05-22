@@ -9,9 +9,9 @@ $(document).ready(function() {
 
     // binary win pattern
     const winPatterns = [
-        Ob111000000, Ob000111000, Ob000000111, // Rows
-        Ob100100100, Ob010010010, Ob001001001, // Columns
-        Ob100010001, Ob001010100 // Diagonals
+        0b111000000, 0b000111000, 0b000000111, // Rows
+        0b100100100, 0b010010010, 0b001001001, // Columns
+        0b100010001, 0b001010100 // Diagonals
     ];
     
     // constants for cell posibilities
@@ -23,51 +23,68 @@ $(document).ready(function() {
     var currentPlayer = X; // X starts the game 
     var gameOver = false;
 
+    var currPosition; // number
+    var elemCurrPosition; // html element
+
     // reference to message area
+    var instructions = $(".instructions");
 
-
-    // call fill board
-    fillBoard();
+    displayInstructions("Welcome to the game!");
 
     // display first turn
     displayTurn();
 
     // on click listener
-    $("tic-tac-toe").on("click", ".square", function() {
-        var posString = $(this).attr('id');
+    $(".tic-tac-toe").on("click", ".position", function() {
+        console.log("square on board clicked");
+        elemCurrPosition = $(this);
+        var posString = elemCurrPosition.attr('id');
         
         // convert position string from id to number
-        var position = parseint(posString);
+        position = parseInt(posString);
         console.log("position string: " + posString);
+
+        play(position);
         
     });
 
-
-
     function displayTurn() {
         console.log(((currentPlayer == X)? 'X': 'O') + '\'s turn.');
+        displayInstructions(((currentPlayer == X)? 'X': 'O') + '\'s turn.');
+
     }
 
-    function play(cell) {
+    function play() {
 
-        if (map[cell] != BLANK) {
+        if (map[position] != BLANK) {
             console.log("position taken");
             return;
         }
 
-        map[cell] = currentPlayer;
+        // record on map either 1 (for X) or -1 (for O) based on currentPlayer
+        map[position] = currentPlayer;
+        console.log(map);
+        
+        // draw player symbol at position
+        if (currentPlayer == X) {
+            drawX(position);
+        } else if (currentPlayer == O) {
+            drawO(position);
+        }
 
         // check to see if winning move
         var winCheck = checkWin(currentPlayer);
-        console.log("win check: " + winCheck);
+        console.log("win check: " + winCheck + " (0 is not a win)");
 
         if (winCheck != 0) {
             gameOver = true;
-            console.log(((currentPayer == X) ? 'X': 'O') + " wins! game over.");
+            console.log(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
+            displayInstructions(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
             return;
         } else if (map.indexOf(BLANK) == -1) {
             gameOver = true;
             console.log("tie! game over.");
+            displayInstructions("tie! game over.");
             return;
         }
 
@@ -78,6 +95,20 @@ $(document).ready(function() {
         console.log("play was a success");
 
         displayTurn();
+    }
+
+    function drawX() {
+        var elemX = $("<h1></h1>").text("X");
+
+        // append to element position on the board 
+        elemCurrPosition.append(elemX);
+    }
+
+    function drawO() {
+        var elemO = $("<h1></h1>").text("O");
+
+        // append to element position on the board
+        elemCurrPosition.append(elemO);
     }
 
     function checkWin(player) {
@@ -100,35 +131,8 @@ $(document).ready(function() {
         return 0;
     }
 
-    function fillBoard() {
-        for (let i = 0; i < map.length; i++) {
-            var coords = getCellCoords(i);
-
-            if (map[i] == X) {
-                drawX();
-            } else if (map[i] == O) {
-                drawO();
-            }
-
-        }
-    }
-    
-    function drawX() {
-
-    }
-
-    function drawO() {
-
-    }
-
-    function getCellCoords (cell) {
-        var x = (cell % 3) * cellSize;
-        var y = Math.floor(cell / 3) * cellSize;
-
-        return {
-            'x': x,
-            'y': y
-        }
+    function displayInstructions(str) {
+        instructions.text(str);
     }
 
 });
