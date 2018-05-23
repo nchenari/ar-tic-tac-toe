@@ -10,7 +10,13 @@ nav ul {
     width: 220px;
 }
 
-/* Traditional Tic Tac Toe
+/* Sidenav Styles
+____________________________________*/
+.sidenav-link-even {
+    background-color: grey;
+}
+
+/* Traditional Tic Tac Toe Styles
 ____________________________________*/
 p {
     text-align: center;
@@ -19,12 +25,12 @@ p {
 .container {
     margin: 0 auto;
     max-width: 960px;
-    
 }
 
 .tic-tac-toe {
     padding-top: 21px;
 }
+
 .row {
     margin-bottom: 0;
 }
@@ -38,7 +44,7 @@ p {
     border: 10px solid white;
 }
 
-/* AR Tic Tac Toe
+/* AR Tic Tac Toe Styles
 ____________________________________*/
 .ar-nav {
     position: fixed; 
@@ -46,6 +52,17 @@ ____________________________________*/
     width: 100%; 
     text-align: center; 
     z-index: 1;
+}
+
+/* Marker Styles
+____________________________________*/
+.marker {
+    max-width: 75%;
+    padding-top: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
 }
 
 /* Media Queries
@@ -58,8 +75,13 @@ ____________________________________*/
     .container {
         width: 70%;
     }
+
+    /* .marker {
+        height: 60px;
+    } */
 }
-@media only screen and (max-width: 601px) {
+
+@media only screen and (max-width: 600px) {
     nav .brand-logo {
         left: 60px !important;
     }
