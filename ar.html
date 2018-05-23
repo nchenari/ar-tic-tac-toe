@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
@@ -115,9 +116,6 @@
                 return;
             }
 
-          });
-
-
 
             // flip from current player
             currentPlayer *= -1; 
@@ -141,7 +139,7 @@
             // draw computer symbol at position
             // get coords based on position id
             var compPosCoords = $( ".hiro" ).find('[id^="' + compPosition + '"]').attr("position");
-            draw(compPosCoords);
+            drawOnCoords(compPosCoords);
             console.log("comp generated position: " + compPosition + "x-y-z: " + compPosCoords);
 
             // check to see if winning move
