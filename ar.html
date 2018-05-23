@@ -13,7 +13,13 @@
             init() {
               this.el.addEventListener('click', function() {
                 console.log('clicked');
-                $( ".hiro" ).append( "<a-entity text-geometry='value: X; size: 1' material='color: #66E1B4' position='-1 0 0' rotation='-90 0 0' scale='' visible=''></a-entity>");
+                console.log(this.getAttribute("id"), this.getAttribute("position"));
+                var x = this.getAttribute("position").x;
+                var y = this.getAttribute("position").y;
+                var z = this.getAttribute("position").z;
+
+                $( ".hiro" ).append( "<a-entity text-geometry='value: X; size: 1' material='color: #66E1B4' position='" + (x - 0.4) + " " + y + " " + (z + 0.5) + "' rotation='-90 0 0' scale='' visible=''></a-entity>");
+                
               });
             }
           });
@@ -26,15 +32,15 @@
         </a-assets>
         <a-scene cursor="rayOrigin:mouse">
             <a-marker class="hiro" preset="hiro">
-                <a-plane id="marker" color="#CCC" height="1.5" width="1.5" position="0 0 -1" rotation="-90 0 0" marker></a-plane>
-                <a-plane id="marker" color="#CCC" height="1.5" width="1.5" position="0 0 -3" rotation="-90 0 0" marker></a-plane>
-                <a-plane id="marker" color="#CCC" height="1.5" width="1.5" position="0 0 -5" rotation="-90 0 0" marker></a-plane>
-                <a-plane id="marker" color="#CCC" height="1.5" width="1.5" position="-2 0 -1" rotation="-90 0 0" marker></a-plane>
-                <a-plane id="marker" color="#CCC" height="1.5" width="1.5" position="-2 0 -3" rotation="-90 0 0" marker></a-plane>
-                <a-plane id="marker" color="#CCC" height="1.5" width="1.5" position="-2 0 -5" rotation="-90 0 0" marker></a-plane>
-                <a-plane id="marker" color="#CCC" height="1.5" width="1.5" position="2 0 -1" rotation="-90 0 0" marker></a-plane>
-                <a-plane id="marker" color="#CCC" height="1.5" width="1.5" position="2 0 -3" rotation="-90 0 0" marker></a-plane>
-                <a-plane id="marker" color="#CCC" height="1.5" width="1.5" position="2 0 -5" rotation="-90 0 0" marker></a-plane>
+                <a-plane id="zero" color="#CCC" height="1.5" width="1.5" position="-2 0 -1" rotation="-90 0 0" marker></a-plane>
+                <a-plane id="one" color="#CCC" height="1.5" width="1.5" position="-2 0 -3" rotation="-90 0 0" marker></a-plane>
+                <a-plane id="two" color="#CCC" height="1.5" width="1.5" position="-2 0 -5" rotation="-90 0 0" marker></a-plane>
+                <a-plane id="three" color="#CCC" height="1.5" width="1.5" position="0 0 -1" rotation="-90 0 0" marker></a-plane>
+                <a-plane id="four" color="#CCC" height="1.5" width="1.5" position="0 0 -3" rotation="-90 0 0" marker></a-plane>
+                <a-plane id="five" color="#CCC" height="1.5" width="1.5" position="0 0 -5" rotation="-90 0 0" marker></a-plane>
+                <a-plane id="six" color="#CCC" height="1.5" width="1.5" position="2 0 -1" rotation="-90 0 0" marker></a-plane>
+                <a-plane id="seven" color="#CCC" height="1.5" width="1.5" position="2 0 -3" rotation="-90 0 0" marker></a-plane>
+                <a-plane id="eight" color="#CCC" height="1.5" width="1.5" position="2 0 -5" rotation="-90 0 0" marker></a-plane>
             </a-marker>
         </a-scene>
   </body>
