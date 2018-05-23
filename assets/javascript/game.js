@@ -5,7 +5,7 @@ $(document).ready(function() {
         0, 0, 0,
         0, 0, 0,
         0, 0, 0
-    ]
+    ];
 
     // binary win pattern
     const winPatterns = [
