@@ -115,10 +115,6 @@
                 return;
             }
 
-          });
-
-
-
             // flip from current player
             currentPlayer *= -1; 
 
@@ -141,8 +137,8 @@
             // draw computer symbol at position
             // get coords based on position id
             var compPosCoords = $( ".hiro" ).find('[id^="' + compPosition + '"]').attr("position");
-            draw(compPosCoords);
-            console.log("comp generated position: " + compPosition + "x-y-z: " + compPosCoords);
+            drawOnCoords(compPosCoords);
+            console.log("comp generated position: " + compPosition + " x-y-z: " + compPosCoords);
 
             // check to see if winning move
             var winCheck = checkWin(currentPlayer);

@@ -91,7 +91,6 @@ $(document).ready(function() {
           return;
       }
 
-
       // flip from current player
       currentPlayer *= -1; 
 
