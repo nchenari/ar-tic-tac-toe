@@ -74,6 +74,21 @@ ____________________________________*/
 
 /* Traditional Tic Tac Toe Styles
 ____________________________________*/
+.background {
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/whirlpool.png);;
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/whirlpool.png);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    padding-bottom: 110px;
+}
+
 p {
     text-align: center;
 }
@@ -93,14 +108,22 @@ p {
     margin-bottom: 0;
 }
 
+.row .col.s4 {
+    width: 30%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
 .size {
     background-color: peachpuff;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 10px solid white;
+    border: 5px solid white;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
-
 
 .size:after {
     content: "";
