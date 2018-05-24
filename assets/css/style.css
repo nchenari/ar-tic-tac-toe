@@ -1,19 +1,75 @@
 /* Navbar Styles
 ____________________________________*/
+nav {
+    background-color: #0e100e;
+}
+
 nav ul {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 80px;
 }
 
+nav ul a {
+    color: #01e6a1;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+a.brand-logo {
+    font-family: 'Modern Antiqua', cursive;
+    color: #01f7ad;
+    font-size: 2.7rem;
+    font-weight: 900;
+}
+
 .sidenav {
     width: 220px;
+    background-color: #e7fff8;
 }
+
+@-webkit-keyframes hvr-ripple-out {
+    100% {
+      top: -12px;
+      right: -12px;
+      bottom: -12px;
+      left: -12px;
+      opacity: 0;
+    }
+  }
+  @keyframes hvr-ripple-out {
+    100% {
+      top: -12px;
+      right: -12px;
+      bottom: -12px;
+      left: -12px;
+      opacity: 0;
+    }
+  }
+
+  .hvr-grow {
+    font-color: lightgrey;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+  .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
 
 /* Sidenav Styles
 ____________________________________*/
-.sidenav-link-even {
-    background-color: grey;
+.sidenav-even {
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
 }
 
 /* Traditional Tic Tac Toe Styles
@@ -38,14 +94,11 @@ p {
 }
 
 .size {
-    /* height: 29vh; */
     background-color: peachpuff;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 10px solid white;
-    /* position: relative;
-    width: 50%; */
 }
 
 
@@ -85,12 +138,14 @@ ____________________________________*/
     }
 
     .container {
-        width: 70%;
+        width: 80%;
     }
+}
 
-    /* .marker {
-        height: 60px;
-    } */
+@media only screen and (max-width: 750px) {
+    .tic-tac-toe {
+        width: 93%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
