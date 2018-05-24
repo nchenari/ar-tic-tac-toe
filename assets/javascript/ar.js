@@ -142,7 +142,7 @@ function compPlay() {
     }
 }
 
-// -------- function to draw appropriate symbol on board at given position
+// -------- function to draw appropriate symbol on board at given position (for augmented reality)
 
 function drawOnCoords(posCoords) {
     // extract x,y,z coordinates from position attribute

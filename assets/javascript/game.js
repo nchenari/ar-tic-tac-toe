@@ -135,23 +135,6 @@ function compPlay() {
     }
 }
 
-function randomOpenPos() {
-    var openIndexes = [];
-
-    // iterate through map and find all BLANK positions (O)
-    for (var i = 0; i < map.length; i++) {
-        if (map[i] == BLANK) {
-            // append index of map to blankIndexes array
-            openIndexes.push(i)
-        }
-    }
-
-    // return a random open index
-    return openIndexes[Math.floor(Math.random() * openIndexes.length)];
-}
-
-
-
 function draw(position) {
     var elem = $("<h1></h1>").text(((currentPlayer == X) ? 'X': 'O'));
 
@@ -159,21 +142,7 @@ function draw(position) {
     $(".tic-tac-toe").find('[id^="' + position + '"]').append(elem);
 
 }
-
-function drawX() {
-    var elemX = $("<h1></h1>").text("X");
-
-    // append to element position on the board 
-    elemCurrPosition.append(elemX);
-}
-
-function drawO() {
-    var elemO = $("<h1></h1>").text("O");
-
-    // append to element position on the board
-    elemCurrPosition.append(elemO);
-}
-
+// -------- function to check win after every successful move from either players or computer
 function checkWin(player) {
     var playerMapBitMask = 0;    // leading zeros don't mean anything with bitmask
     for (var i = 0; i < map.length; i++) {
@@ -194,6 +163,48 @@ function checkWin(player) {
     return 0;
 }
 
+// ----------- utility function to select random open position for ai/computer player 
+
+function randomOpenPos() {
+    // pick an open corner position if available, otherwise pick a random open positon 
+    // max 4 corners available....at index 0, 2, 6, 8
+    var cornerIndexes = [0, 2, 6, 8];
+    var openCornerIndexes = [];
+    for (var i = 0; i < cornerIndexes.length; i++) {
+        if (map[cornerIndexes[i]] == BLANK) {
+            // append index stored in i of cornerIndexes array to openCornerIndexes 
+            openCornerIndexes.push(cornerIndexes[i]);
+        }
+    }
+    console.log("number of corner indexes available: " + openCornerIndexes.length);
+
+    if (openCornerIndexes.length > 1) {
+        // select random map index from open corner indexes
+        return openCornerIndexes[Math.floor(Math.random() * openCornerIndexes.length)];
+    } else if (openCornerIndexes.length > 0) {
+        // return first and only element
+        return openCornerIndexes[0];
+    }
+    
+    // if no open corner indexes available, pick a random index
+    var openIndexes = [];
+    // iterate through map and find all BLANK positions (O)
+    for (var i = 0; i < map.length; i++) {
+        if (map[i] == BLANK) {
+            // append index of map to openIndexes array
+            openIndexes.push(i);
+        }
+    }
+    // return a random open index
+    return openIndexes[Math.floor(Math.random() * openIndexes.length)];
+}
+
+
+function restart() {
+
+}
+
+// ----------- utility functions to display info to user
 function displayTurn() {
     console.log(((currentPlayer == X)? 'X': 'O') + '\'s turn.');
     displayInstructions(((currentPlayer == X)? 'X': 'O') + '\'s turn.');
