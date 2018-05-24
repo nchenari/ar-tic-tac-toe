@@ -9,19 +9,20 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
-    <title>Tic Tac Toe</title>
+    <title>xoAR</title>
 </head>
-<body>
+<body class="background">
     <nav>
         <div class="nav-wrapper container">
             <a href="index.html" class="brand-logo">xoAR</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-small-and-down">
+            <ul class="left hide-on-small-and-down">
                 <li><a class="hvr-grow" href="marker.html">AR Marker</a></li>
                 <li><a class="hvr-grow" href="ar.html">AR Tic Tac Toe</a></li>
+            </ul>
+            <ul class="right">
                 <li>
-                    <!-- Switch -->
-                    <div id = "twoPlayerSwitch" class="switch"><label>1 Player<input type="checkbox"><span class="lever"></span>2 Player</label></div>
+                    <div id = "twoPlayerSwitch" class="switch t-switch"><label>1P<input type="checkbox"><span class="lever"></span>2P</label></div>
                 </li>
             </ul>
         </div>
@@ -30,7 +31,6 @@
         <li><a href="marker.html">AR Marker</a></li>
         <li><a class="sidenav-even" href="ar.html">AR Tic Tac Toe</a></li>
     </ul>
-    <div class="background">
         <div class="tic-tac-toe">
             <div class="row">
                 <div id="0" class="col s4 size position"></div>
@@ -39,7 +39,7 @@
             </div>
             <div class="row">
                 <div id="3" class="col s4 size position"></div>
-                <div id="4" class="col s4 size position">Make your move!</div>
+                <div id="4" class="col s4 size position special-col">Make your move!</div>
                 <div id="5" class="col s4 size position"></div>
             </div>
             <div class="row">
@@ -52,7 +52,6 @@
         <div class="instructions">Instructions</div>
         <!-- restart button -->
         <a id="restartBtn" class="waves-effect waves-light btn-large"><i class="material-icons left">replay</i>Restart</a>
-    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
