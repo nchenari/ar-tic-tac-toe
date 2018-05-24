@@ -1,16 +1,16 @@
 
 // map of 9 possible spaces
 var map = [
-0, 0, 0,
-0, 0, 0,
-0, 0, 0
+    0, 0, 0,
+    0, 0, 0,
+    0, 0, 0
 ];
 
 // binary win pattern
 const winPatterns = [
-0b111000000, 0b000111000, 0b000000111, // Rows
-0b100100100, 0b010010010, 0b001001001, // Columns
-0b100010001, 0b001010100 // Diagonals
+    0b111000000, 0b000111000, 0b000000111, // Rows
+    0b100100100, 0b010010010, 0b001001001, // Columns
+    0b100010001, 0b001010100 // Diagonals
 ];
 
 // constants for cell posibilities
@@ -29,7 +29,7 @@ var userPosCoords; // x y z of user selected position
 // reference to message area
 var instructions = $(".instructions");
 
-displayInstructions("Welcome to the game!");
+displayInstructions("Welcome to the game! Please select one player or two player! (one player default)");
 
 // display first turn
 displayTurn();
@@ -43,22 +43,24 @@ init() {
     console.log("aframe created");
     // click listener
     this.el.addEventListener('click', function() {
-
-    console.log("square on board clicked");
-    var posString = this.getAttribute("id");
-    // convert position string from id to number
-    userPosition = parseInt(posString);
-    // get coordinates from position attribute
-    userPosCoords = this.getAttribute("position");
-    console.log("user selected position: " + posString + "x-y-z: " + userPosCoords);
-    
-    console.log("calling userPlay() next");
-    userPlay();
+        console.log("square on board clicked");
+        if (gameOver == false) {
+            var posString = this.getAttribute("id");
+            // convert position string from id to number
+            userPosition = parseInt(posString);
+            // get coordinates from position attribute
+            userPosCoords = this.getAttribute("position");
+            console.log("user selected position: " + posString + "x-y-z: " + userPosCoords);
+            
+            console.log("calling userPlay() next");
+            userPlay();
+        }
     });
 }
 });
 
 function userPlay() {
+
     if (map[userPosition] != BLANK) {
         // position already taken, return so that user can select another postion on board
         console.log("position taken");
@@ -102,42 +104,45 @@ function userPlay() {
 }
 
 function compPlay() {
-    var compPosition = randomOpenPos();
-    console.log("computer randomly chosen position: " + compPosition);
+    if (gameOver == false) { // if after user move, game still on (not lost or tied)
 
-    // record on map either 1 (for X) or -1 (for O) based on currentPlayer for randomly selected computer position
-    map[compPosition] = currentPlayer;
-    console.log(map);
-    
-    // draw computer symbol at position
-    // get coords based on position id
-    var compPosCoords = $( ".hiro" ).find('[id^="' + compPosition + '"]').attr("position");
-    drawOnCoords(compPosCoords);
-    console.log("comp generated position: " + compPosition + "x-y-z: " + compPosCoords);
+        var compPosition = randomOpenPos();
+        console.log("computer randomly chosen position: " + compPosition);
 
-    // check to see if winning move
-    var winCheck = checkWin(currentPlayer);
-    console.log("win check: " + winCheck + " (0 is not a win)");
+        // record on map either 1 (for X) or -1 (for O) based on currentPlayer for randomly selected computer position
+        map[compPosition] = currentPlayer;
+        console.log(map);
+        
+        // draw computer symbol at position
+        // get coords based on position id
+        var compPosCoords = $( ".hiro" ).find('[id^="' + compPosition + '"]').attr("position");
+        drawOnCoords(compPosCoords);
+        console.log("comp generated position: " + compPosition + "x-y-z: " + compPosCoords);
 
-    if (winCheck != 0) {
-        gameOver = true;
-        console.log(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
-        displayInstructions(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
-        return;
-    } else if (map.indexOf(BLANK) == -1) { // no more blank spaces on board and no win
-        gameOver = true;
-        console.log("tie. game over.");
-        displayInstructions("tie! game over.");
-        return;
+        // check to see if winning move
+        var winCheck = checkWin(currentPlayer);
+        console.log("win check: " + winCheck + " (0 is not a win)");
+
+        if (winCheck != 0) {
+            gameOver = true;
+            console.log(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
+            displayInstructions(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
+            return;
+        } else if (map.indexOf(BLANK) == -1) { // no more blank spaces on board and no win
+            gameOver = true;
+            console.log("tie. game over.");
+            displayInstructions("tie! game over.");
+            return;
+        }
+
+        // flip from current player 
+        currentPlayer *= -1; 
+
+        displayTurn();
     }
-
-    // flip from current player 
-    currentPlayer *= -1; 
-
-    displayTurn();
 }
 
-// -------- function to draw appropriate symbol on board at given position
+// -------- function to draw appropriate symbol on board at given position (for augmented reality)
 
 function drawOnCoords(posCoords) {
     // extract x,y,z coordinates from position attribute
@@ -208,6 +213,11 @@ function randomOpenPos() {
     return openIndexes[Math.floor(Math.random() * openIndexes.length)];
 }
 
+
+function restart() {
+
+}
+
 // ----------- utility functions to display info to user
 function displayTurn() {
     console.log(((currentPlayer == X)? 'X': 'O') + '\'s turn.');
@@ -218,4 +228,5 @@ function displayTurn() {
 function displayInstructions(str) {
     instructions.text(str);
 }
+
 

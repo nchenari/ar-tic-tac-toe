@@ -19,6 +19,10 @@
             <ul class="right hide-on-small-and-down">
                 <li><a class="hvr-grow" href="marker.html">AR Marker</a></li>
                 <li><a class="hvr-grow" href="ar.html">AR Tic Tac Toe</a></li>
+                <li>
+                    <!-- Switch -->
+                    <div id = "twoPlayerSwitch" class="switch"><label>1 Player<input type="checkbox"><span class="lever"></span>2 Player</label></div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -29,13 +33,13 @@
     <div class="background">
         <div class="tic-tac-toe">
             <div class="row">
-                <div id="0" class="col s4 size position">Make your move!</div>
+                <div id="0" class="col s4 size position"></div>
                 <div id="1" class="col s4 size position"></div>
                 <div id="2" class="col s4 size position"></div>
             </div>
             <div class="row">
                 <div id="3" class="col s4 size position"></div>
-                <div id="4" class="col s4 size position"></div>
+                <div id="4" class="col s4 size position">Make your move!</div>
                 <div id="5" class="col s4 size position"></div>
             </div>
             <div class="row">
@@ -44,7 +48,10 @@
                 <div id="8" class="col s4 size position"></div>
             </div>
         </div>
+        <!-- game instructions for user -->
         <div class="instructions">Instructions</div>
+        <!-- restart button -->
+        <a id="restartBtn" class="waves-effect waves-light btn-large"><i class="material-icons left">replay</i>Restart</a>
     </div>
 
 
