@@ -24,33 +24,6 @@ a.brand-logo {
     font-weight: 900;
 }
 
-.stick {
-    width: 100%;
-    position: fixed;
-    right: 20px !important;
-    top: 55px;
-}
-
-.ar-brand-logo{
-    border: 0;
-    bottom: 0;
-    cursor: pointer !important;
-    min-width: 50px;
-    min-height: 30px;
-    padding-right: 5%;
-    padding-top: 4%;
-    position: absolute;
-    right: 0;
-    transition: background-color .05s ease;
-    -webkit-transition: background-color .05s ease;
-    z-index: 9999;
-}
-
-.sidenav {
-    width: 220px;
-    background-color: #e7fff8;
-}
-
 @-webkit-keyframes hvr-ripple-out {
     100% {
       top: -12px;
@@ -60,6 +33,7 @@ a.brand-logo {
       opacity: 0;
     }
   }
+
   @keyframes hvr-ripple-out {
     100% {
       top: -12px;
@@ -82,6 +56,7 @@ a.brand-logo {
     -webkit-transition-property: transform;
     transition-property: transform;
   }
+
   .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
@@ -89,6 +64,11 @@ a.brand-logo {
 
 /* Sidenav Styles
 ____________________________________*/
+.sidenav {
+    width: 220px;
+    background-color: #e7fff8;
+}
+
 .sidenav-even {
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
@@ -96,6 +76,10 @@ ____________________________________*/
 
 /* Traditional Tic Tac Toe Styles
 ____________________________________*/
+p {
+    text-align: center;
+}
+
 .background {
     background: url(https://www.toptal.com/designers/subtlepatterns/patterns/whirlpool.png);;
     background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/whirlpool.png);
@@ -109,10 +93,6 @@ ____________________________________*/
     background-clip: initial;
     background-color: initial;
     padding-bottom: 110px;
-}
-
-p {
-    text-align: center;
 }
 
 .container {
@@ -153,9 +133,80 @@ p {
     padding-bottom: 100%;
   }
 
-
 /* AR Tic Tac Toe Styles
 ____________________________________*/
+#arjsDebugUIContainer, .a-enter-vr-button {
+    display: none;
+}
+
+#twoPlayerSwitch {
+    right: 0;
+    position: absolute;
+}
+
+#restartBtn {
+    right: 0;
+    bottom: -2px;
+    position: absolute;
+    background-color: #0e100e;
+    color: #01e6a1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.instructions {
+    left: 35px;
+    bottom: 0;
+    position: absolute;
+    padding: 10px 10px 10px 10px;
+    background-color: #0e100e;
+    color: #01e6a1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.switch label {
+    font-family: 'Roboto', sans-serif;
+    color: #0e100e;
+    font-size: medium;
+}
+
+.stick-top {
+    background-color: #01e6a1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.stick-bottom {
+    width: 100%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.ar-brand-logo {
+    font-family: 'Modern Antiqua', cursive;
+    font-size: 2.7rem;
+    font-weight: 900;
+    color: #0e100e;
+    border: 0;
+    bottom: 0;
+    cursor: pointer !important;
+    min-width: 50px;
+    min-height: 30px;
+    padding-right: 0;
+    padding-top: 0;
+    position: absolute;
+    left: 0;
+    transition: background-color .05s ease;
+    -webkit-transition: background-color .05s ease;
+    z-index: 9999;
+} 
+
 .ar-nav {
     position: fixed; 
     top: 0; 
@@ -206,4 +257,3 @@ ____________________________________*/
         transform: translateX(0);  
     }
 }
-
