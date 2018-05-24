@@ -21,13 +21,19 @@ const O = -1;
 // session variables
 var currentPlayer = X; // X starts the game 
 var withComp = true; // default play with computer
-var gameOver = false;
+var gameOver = true;
 
 var userPosition; // number 0-8, user's position extracted from click listener
 var userPosCoords; // x y z of user selected position
 
 // reference to message area
 var instructions = $(".instructions");
+
+// after refresh wait a second for before allowing game to be in session
+setTimeout(function() {
+    gameOver = false;
+}, 2000);
+
 
 displayInstructions("Welcome to the game! Please select one player or two player! (one player default)");
 
