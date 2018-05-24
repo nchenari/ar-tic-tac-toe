@@ -31,12 +31,18 @@ var instructions = $(".instructions");
 
 displayInstructions("Welcome to the game! Please select one player or two player! (one player default)");
 
-// on click listener for 1-2 player switch
-$(".switch").on("click", function() {
+$("#twoPlayerSwitch :checkbox").change(function() {
+    if (this.checked) {
         console.log("switch checked, user has selected two player game");
         withComp = false;
-        return;
-
+        console.log("withComp variable: " + withComp);
+        displayInstructions("2 player selected!");
+    } else {
+        console.log("switch unchecked, user has selected one player game");
+        withComp = true;
+        console.log("withComp variable: " + withComp);
+        displayinstructions("1 player selected!");
+    }
 });
 
 // on click listener reset button 
@@ -103,8 +109,9 @@ function userPlay() {
 
     // check if playing with computer
     if (withComp == true) {
-
-        compPlay();
+        // set delay between user move and computer move (5 miliseconds)
+        setTimeout(compPlay, 600);
+        // compPlay();
     } else {
 
         displayTurn();
