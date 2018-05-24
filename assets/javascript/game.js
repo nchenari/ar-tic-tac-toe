@@ -41,14 +41,16 @@ $("#twoPlayerSwitch :checkbox").change(function() {
         console.log("switch unchecked, user has selected one player game");
         withComp = true;
         console.log("withComp variable: " + withComp);
-        displayinstructions("1 player selected!");
+        displayInstructions("1 player selected!");
     }
 });
 
 // on click listener reset button 
 $("#restartBtn").on("click", function() {
     console.log("restart button pressed. page reloading")
-    location.reload();
+    setTimeout(function() {
+        location.reload();
+    }, 500);
 });
 
 // display first turn
@@ -57,6 +59,7 @@ displayTurn();
 // on click listener
 $(".tic-tac-toe").on("click", ".position", function() {
     console.log("square on board clicked");
+
     if (gameOver == false) {
         elemUserPos = $(this);
         var posString = elemUserPos.attr('id');
@@ -99,7 +102,7 @@ function userPlay() {
     } else if (map.indexOf(BLANK) == -1) {
         gameOver = true;
         console.log("tie! game over.");
-        displayInstructions("tie! Press restart button to play again.");
+        displayInstructions("Tie! Press restart button to play again.");
         return;
     }
 
@@ -160,7 +163,7 @@ function draw(position) {
     var elem = $("<h1></h1>").text(((currentPlayer == X) ? 'X': 'O'));
 
     // apend to element at position given
-    $(".tic-tac-toe").find('[id^="' + position + '"]').append(elem);
+    $(".tic-tac-toe").find('[id^="' + position + '"]').empty().append(elem);
 
 }
 // -------- function to check win after every successful move from either players or computer
@@ -218,11 +221,6 @@ function randomOpenPos() {
     }
     // return a random open index
     return openIndexes[Math.floor(Math.random() * openIndexes.length)];
-}
-
-
-function restart() {
-
 }
 
 // ----------- utility functions to display info to user
