@@ -31,6 +31,20 @@ var instructions = $(".instructions");
 
 displayInstructions("Welcome to the game! Please select one player or two player! (one player default)");
 
+// on click listener for 1-2 player switch
+$(".switch").on("click", function() {
+        console.log("switch checked, user has selected two player game");
+        withComp = false;
+        return;
+
+});
+
+// on click listener reset button 
+$("#restartBtn").on("click", function() {
+    console.log("restart button pressed. page reloading")
+    location.reload();
+});
+
 // display first turn
 displayTurn();
 
@@ -74,12 +88,12 @@ function userPlay() {
     if (winCheck != 0) {
         gameOver = true;
         console.log(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
-        displayInstructions(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
+        displayInstructions(((currentPlayer == X) ? 'X': 'O') + " wins! Press restart button to play again.");
         return;
     } else if (map.indexOf(BLANK) == -1) {
         gameOver = true;
         console.log("tie! game over.");
-        displayInstructions("tie! game over.");
+        displayInstructions("tie! Press restart button to play again.");
         return;
     }
 
