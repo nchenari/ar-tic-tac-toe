@@ -7,7 +7,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
         <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
-
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
         <!-- ar game logic -->
         <script src="assets/javascript/ar.js"></script>
 
@@ -29,7 +29,9 @@
                 <a-plane id="8" color="#CCC" height="1.5" width="1.5" position="2 0 -5" rotation="-90 0 0" marker></a-plane>
             </a-marker>
         </a-scene>
-
+        <div class="stick" aframe-injected>
+                <a href="index.html" class="brand-logo ar-brand-logo" aframe-injected>xoAR</a>
+            </div>
         <br>
         <!-- simple text for game instructions -->
         <div class="instructions">Instructions</div>

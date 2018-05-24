@@ -24,6 +24,28 @@ a.brand-logo {
     font-weight: 900;
 }
 
+.stick {
+    width: 100%;
+    position: fixed;
+    right: 20px !important;
+    top: 55px;
+}
+
+.ar-brand-logo{
+    border: 0;
+    bottom: 0;
+    cursor: pointer !important;
+    min-width: 50px;
+    min-height: 30px;
+    padding-right: 5%;
+    padding-top: 4%;
+    position: absolute;
+    right: 0;
+    transition: background-color .05s ease;
+    -webkit-transition: background-color .05s ease;
+    z-index: 9999;
+}
+
 .sidenav {
     width: 220px;
     background-color: #e7fff8;
