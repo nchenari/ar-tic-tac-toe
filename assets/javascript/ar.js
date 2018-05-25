@@ -58,8 +58,6 @@ $("#restartBtn").on("click", function() {
     }, 500);
 });
 
-// display first turn
-displayTurn();
 
 // set up a-frame scene
 AFRAME.registerComponent('marker', {
@@ -111,12 +109,12 @@ function userPlay() {
     if (winCheck != 0) {
         gameOver = true;
         console.log(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
-        displayInstructions(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
+        displayInstructions(((currentPlayer == X) ? 'X': 'O') + " wins! Press restart button to play again.");
         return;
     } else if (map.indexOf(BLANK) == -1) {
         gameOver = true;
         console.log("tie! game over.");
-        displayInstructions("tie! game over.");
+        displayInstructions("Tie! Press restart button to play again.");
         return;
     }
 
@@ -125,11 +123,11 @@ function userPlay() {
 
     // check if playing with computer
     if (withComp == true) {
-        // set delay between user move and computer move (600 miliseconds)
-        setTimeout(compPlay, 600);
+        setTimeout(displayTurn, 600);
+        // set delay between user move and computer move (700 miliseconds)
+        setTimeout(compPlay, 900);
     } else {
-
-        displayTurn();
+        setTimeout(displayTurn, 600);
     }
 }
 
@@ -168,7 +166,7 @@ function compPlay() {
         // flip from current player 
         currentPlayer *= -1; 
 
-        displayTurn();
+        setTimeout(displayTurn, 400);
     }
 }
 

@@ -53,8 +53,6 @@ $("#restartBtn").on("click", function() {
     }, 500);
 });
 
-// display first turn
-displayTurn();
 
 // on click listener
 $(".tic-tac-toe").on("click", ".position", function() {
@@ -112,11 +110,11 @@ function userPlay() {
 
     // check if playing with computer
     if (withComp == true) {
-        // set delay between user move and computer move (600 miliseconds)
-        setTimeout(compPlay, 600);
+        setTimeout(displayTurn, 600);
+        // set delay between user move and computer move (900 miliseconds)
+        setTimeout(compPlay, 900);
     } else {
-
-        displayTurn();
+        setTimeout(displayTurn, 600);
     }
     
 }
@@ -154,7 +152,7 @@ function compPlay() {
         // flip from current player
         currentPlayer *= -1; 
 
-        displayTurn();
+        setTimeout(displayTurn, 400);
     }
 }
 
