@@ -61,6 +61,10 @@ a.brand-logo {
     transform: scale(1.05);
   }
 
+  .nav-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+}
 /* Sidenav Styles
 ____________________________________*/
 .sidenav {
@@ -72,10 +76,6 @@ ____________________________________*/
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
 }
-
-/* nav .sidenav-trigger {
-    margin-right: 18px;
-} */
 
 /* Traditional Tic Tac Toe Styles
 ____________________________________*/
@@ -107,9 +107,10 @@ p {
     text-align: center;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 960px;
+.special-text {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .tic-tac-toe {
@@ -120,6 +121,7 @@ p {
 
 .row {
     margin-bottom: 0;
+    padding-left: 5%;
 }
 
 .row .col.s4 {
@@ -159,6 +161,21 @@ p {
       background-color: grey;
   }
 
+.stick-bottom .restart-index {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #0e100e !important;
+    color: #01e6a1 !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.stick-bottom .instructions-index {
+    background-color: #0e100e !important;
+    color: #01e6a1 !important;
+}
 /* AR Tic Tac Toe Styles
 ____________________________________*/
 #arjsDebugUIContainer, .a-enter-vr-button {
@@ -174,8 +191,8 @@ ____________________________________*/
     right: 0;
     bottom: 0;
     position: absolute;
-    background-color: #0e100e;
-    color: #01e6a1;
+    background-color: #01e6a1;
+    color: #0e100e;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     border-radius: 5px;
@@ -186,8 +203,8 @@ ____________________________________*/
     bottom: 0;
     position: absolute;
     padding: 10px 10px 10px 10px;
-    background-color: #0e100e;
-    color: #01e6a1;
+    background-color: #01e6a1; 
+    color: #0e100e;;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     border-radius: 5px;
@@ -264,9 +281,18 @@ ____________________________________*/
     }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 350px) {
     .tic-tac-toe {
         width: 93%;
+    }
+    .row {
+        padding-left: 3%;
+    }
+    .size {
+        margin-right: 6px;
+    }
+    .t-switch label {
+        font-size: small;
     }
 }
 

@@ -157,8 +157,8 @@ function drawOnCoords(posCoords) {
     var z = posCoords.z;
 
     // draw symbol
-    $( ".hiro" ).append( "<a-entity text-geometry='value: " + ((currentPlayer == X) ? 'X': 'O') + "; size: 1' material='color: " + ((currentPlayer == X) ? '#66E1B4': '#c866e1')  + "' position='" 
-                        + (x - 0.4) + " " + y + " " + (z + 0.5) + "' rotation='-90 0 0' scale='' visible=''></a-entity>");
+    $( ".hiro" ).append( "<a-entity text-geometry='value: " + ((currentPlayer == X) ? 'X': 'O') + "; size: 1' material='color: " + ((currentPlayer == X) ? '#01e6a1': '#0e100e')  + "' position='" 
+                        + (x - 0.4) + " " + 0.25 + " " + (z + 0.5) + "' rotation='-90 0 0' scale='' visible=''></a-entity>");
     console.log(currentPlayer + " drawn at: " + posCoords);
 }
 
