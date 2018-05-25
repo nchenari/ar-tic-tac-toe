@@ -34,8 +34,29 @@ setTimeout(function() {
     gameOver = false;
 }, 2000);
 
-
 displayInstructions("Welcome to the game! Please select one player or two player! (one player default)");
+
+$("#twoPlayerSwitch :checkbox").change(function() {
+    if (this.checked) {
+        console.log("switch checked, user has selected two player game");
+        withComp = false;
+        console.log("withComp variable: " + withComp);
+        displayInstructions("2 player selected!");
+    } else {
+        console.log("switch unchecked, user has selected one player game");
+        withComp = true;
+        console.log("withComp variable: " + withComp);
+        displayInstructions("1 player selected!");
+    }
+});
+
+// on click listener reset button, 500 millisecond delay
+$("#restartBtn").on("click", function() {
+    console.log("restart button pressed. page reloading")
+    setTimeout(function() {
+        location.reload();
+    }, 500);
+});
 
 // display first turn
 displayTurn();
@@ -50,6 +71,7 @@ init() {
     // click listener
     this.el.addEventListener('click', function() {
         console.log("square on board clicked");
+
         if (gameOver == false) {
             var posString = this.getAttribute("id");
             // convert position string from id to number
@@ -103,8 +125,10 @@ function userPlay() {
 
     // check if playing with computer
     if (withComp == true) {
-        compPlay();
+        // set delay between user move and computer move (600 miliseconds)
+        setTimeout(compPlay, 600);
     } else {
+
         displayTurn();
     }
 }
@@ -217,11 +241,6 @@ function randomOpenPos() {
     }
     // return a random open index
     return openIndexes[Math.floor(Math.random() * openIndexes.length)];
-}
-
-
-function restart() {
-
 }
 
 // ----------- utility functions to display info to user
