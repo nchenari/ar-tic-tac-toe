@@ -45,7 +45,7 @@ $("#twoPlayerSwitch :checkbox").change(function() {
     }
 });
 
-// on click listener reset button 
+// on click listener reset button, 500 millisecond delay 
 $("#restartBtn").on("click", function() {
     console.log("restart button pressed. page reloading")
     setTimeout(function() {
@@ -112,9 +112,8 @@ function userPlay() {
 
     // check if playing with computer
     if (withComp == true) {
-        // set delay between user move and computer move (5 miliseconds)
+        // set delay between user move and computer move (600 miliseconds)
         setTimeout(compPlay, 600);
-        // compPlay();
     } else {
 
         displayTurn();
