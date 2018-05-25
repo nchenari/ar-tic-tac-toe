@@ -1,7 +1,7 @@
 # xoAR
-> Tic Tac Toe! Play in 2D or 3D augmented reality.
+> Tic-Tac-Toe! Play in 2D or 3D augmented reality.
 
-xoAR is an entirely web-based, front-end tic-tac-toe game that can be played in both traditional and augmented reality modes across multiple devices and browsers. Desktop/laptop AR gameplay is seamless so long as you have a webcam, and mobile gameplay functions at high levels of performance on a variety of platforms (e.g., iOS, Android, Windows Phone, etc.) and browsers (e.g., Safari, Chrome, Firefox, etc.). 
+xoAR is an entirely web-based, front-end Tic-Tac-Toe game that can be played in both traditional and augmented reality modes across multiple devices and browsers. Desktop/laptop AR gameplay is seamless so long as you have a webcam, and mobile gameplay functions at high levels of performance on a variety of platforms (e.g., iOS, Android, Windows Phone, etc.) and browsers (e.g., Safari, Chrome, Firefox, etc.). 
 
 For those of you playing on iOS, there are some caveats for AR gameplay. Namely, your phone will need to be updated to at least iOS 11, but preferably iOS 11.3.1, and Safari must be used for the AR game to be able to run otherwise the following error will be thrown:
 
