@@ -25,6 +25,8 @@ var currentPlayer = X; // X starts the game
 var withComp = true; // default play with computer
 var gameOver = true;
 
+var moveAllowed = true; // block move when appropriate
+
 // var userPosition; // number 0-8, user's position extracted from click listener
 // var userPosCoords; // x y z of user selected position
 
@@ -65,7 +67,7 @@ $("#restartBtn").on("click", function() {
 aframeListener = function() {
     console.log("aframeListener function overwritten and code added");
 
-    if (gameOver == false) {
+    if (gameOver == false && moveAllowed == true) {
         console.log("user selected position: " + userPosString + "x-y-z: " + userPosCoords);
         
         console.log("calling userPlay() next");
@@ -90,6 +92,9 @@ function userPlay() {
     
     // draw player's symbol at userPosCoords
     drawOnCoords(userPosCoords);
+
+    // block move until ready
+    moveAllowed = false;
 
     // check to see if winning move
     var winCheck = checkWin(currentPlayer);
@@ -116,6 +121,7 @@ function userPlay() {
         // set delay between user move and computer move (700 miliseconds)
         setTimeout(compPlay, 900);
     } else {
+        moveAllowed = true;
         setTimeout(displayTurn, 600);
     }
 }
@@ -154,6 +160,9 @@ function compPlay() {
 
         // flip from current player 
         currentPlayer *= -1; 
+
+        // allow user move
+        moveAllowed = true;
 
         setTimeout(displayTurn, 400);
     }
