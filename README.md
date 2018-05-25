@@ -23,7 +23,9 @@ xoAR is built from a variety of front-end web technologies including HTML, A-Fra
 
 In order to play oxAR in AR mode, the Hiro AR marker provided under the oxAR "AR Marker" window needs to utilized. 
 
-For example, on a first computing device, maybe your deskptop/laptop, pull up the Hiro AR Marker. On a second computing device such as your mobile phone, pull up the xoAR "AR Tic-Tac-Toe" window. Upon doing so, you will be asked if oxAR can use your camera - select OK - then point your camera at the Hiro AR Marker on the first computing device. The AR Tic-Tac-Toe gameboard will be rendered on your mobile device! You can then touch the rendered AR planes in order to make your move. Such steps may also be inverted so you can play on your desktop/laptop while providing the Hiro AR Marker from your mobile device.
+For example, on a first computing device, maybe your deskptop/laptop, pull up the Hiro AR Marker. On a second computing device such as your mobile phone, pull up the xoAR "AR Tic-Tac-Toe" window. Upon doing so, you will be asked if oxAR can use your camera - select OK - then point your camera at the Hiro AR Marker on the first computing device. The AR Tic-Tac-Toe gameboard will be rendered on your mobile device! You can then touch the rendered AR planes in order to make your move. 
+
+Such steps may also be inverted so you can play on your desktop/laptop while providing the Hiro AR Marker from your mobile device.
 
 ## Gameplay Photos
 
