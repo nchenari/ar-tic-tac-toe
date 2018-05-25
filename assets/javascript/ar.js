@@ -1,3 +1,5 @@
+// contain everything except for the AFRAME into jQuery .ready() function. html elements cannot be accessed otherwise
+$(document).ready(function(){
 
 // map of 9 possible spaces
 var map = [
@@ -23,16 +25,16 @@ var currentPlayer = X; // X starts the game
 var withComp = true; // default play with computer
 var gameOver = true;
 
-var userPosition; // number 0-8, user's position extracted from click listener
-var userPosCoords; // x y z of user selected position
+// var userPosition; // number 0-8, user's position extracted from click listener
+// var userPosCoords; // x y z of user selected position
 
-// reference to message area
-var instructions = $(".instructions");
-
-// after refresh wait a second for before allowing game to be in session
+// after refresh wait a second for before allowing game to be in session (prevents auto click on refresh on mobile)
 setTimeout(function() {
     gameOver = false;
 }, 2000);
+
+// reference to message area
+var instructions = $(".instructions");
 
 displayInstructions("Welcome to the game! Please select one player or two player! (one player default)");
 
@@ -59,31 +61,18 @@ $("#restartBtn").on("click", function() {
 });
 
 
-// set up a-frame scene
-AFRAME.registerComponent('marker', {
-schema: {
-    default: ''
-},
-init() {
-    console.log("aframe created");
-    // click listener
-    this.el.addEventListener('click', function() {
-        console.log("square on board clicked");
+// overwrite aframeListener function 
+aframeListener = function() {
+    console.log("aframeListener function overwritten and code added");
 
-        if (gameOver == false) {
-            var posString = this.getAttribute("id");
-            // convert position string from id to number
-            userPosition = parseInt(posString);
-            // get coordinates from position attribute
-            userPosCoords = this.getAttribute("position");
-            console.log("user selected position: " + posString + "x-y-z: " + userPosCoords);
-            
-            console.log("calling userPlay() next");
-            userPlay();
-        }
-    });
+    if (gameOver == false) {
+        console.log("user selected position: " + userPosString + "x-y-z: " + userPosCoords);
+        
+        console.log("calling userPlay() next");
+        userPlay();
+    }
 }
-});
+
 
 function userPlay() {
 
@@ -251,5 +240,10 @@ function displayTurn() {
 function displayInstructions(str) {
     instructions.text(str);
 }
+
+});    
+
+
+
 
 
