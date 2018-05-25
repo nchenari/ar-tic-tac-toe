@@ -23,9 +23,7 @@ https://nchenari.github.io/ar-tic-tac-toe/index.html
 
 Mobile
 
-![img_5573](https://user-images.githubusercontent.com/37127765/40551341-980b3dde-600a-11e8-9614-1cd4276b1cab.JPG)
-
-![img_5580](https://user-images.githubusercontent.com/37127765/40551380-b8ab35bc-600a-11e8-9bc2-8ac206b699c9.JPG)
+![img_5580](https://user-images.githubusercontent.com/37127765/40551574-5ee68026-600b-11e8-9a9a-76a69e03bfb1.JPG)
 
 Laptop
 
