@@ -9,15 +9,21 @@ For those of you playing on iOS, there are some caveats for AR gameplay. Namely,
 
 Additionally, another iOS/Safari quirk we encountered was that the game had to be explicitly opened in Safari, as opposed to jumping into Safari through a third party application such as Slack. 
 
-For everyone on Android, Windows Phone, etc., AR gameplay should occur without difficulty, but don't hesitate to reach out if you run into any difficulties.
+For everyone on Android, Windows Phone, etc., AR gameplay should occur without difficulty, but do not hesitate to reach out if you run into any difficulties..
 
-## Link
+## Tech
 
-Visit on GitHub:
+xoAR is built from a variety of front-end web technologies including HTML, A-Frame, CSS, Materialize, JavaScript, jQuery, and AR.js. Across both the 2D and 3D game embodiments, the core markup structure and styling are done in HTML, CSS, and Materialize, and the tic-tac-toe game logic is driven by JavaScript/jQuery. Additionally, in the 3D game embodiment, A-Frame is leveraged in order to provide robust, cross-platform AR visual components (e.g., tic-tac-toe board and X's & O's) and the rendering of such components is provided for by AR.js. For your reference, we have provided links to A-Frame and AR.js in case you are curious to learn more!
 
-```sh
-https://nchenari.github.io/ar-tic-tac-toe/index.html
-```
+  https://aframe.io/
+  
+  https://github.com/jeromeetienne/AR.js/blob/master/README.md
+
+## Gameplay Instructions
+
+In order to play oxAR in AR mode, the Hiro AR marker provided under the oxAR "AR Marker" window needs to utilized. 
+
+For example, on a first computing device, maybe your deskptop/laptop, pull up the Hiro AR Marker. On a second computing device such as your mobile phone, pull up the xoAR "AR Tic-Tac-Toe" window. Upon doing so, you will be asked if oxAR can use your camera - select OK - then point your camera at the Hiro AR Marker on the first computing device. The AR Tic-Tac-Toe gameboard will be rendered on your mobile device! You can then touch the rendered AR planes in order to make your move. Such steps may also be inverted so you can play on your desktop/laptop while providing the Hiro AR Marker from your mobile device.
 
 ## Gameplay Photos
 
@@ -30,14 +36,14 @@ Mobile
 Laptop
 
 <img width="1435" alt="screen shot 2018-05-25 at 10 56 13 am" src="https://user-images.githubusercontent.com/37127765/40551401-cda65028-600a-11e8-8461-75bf6261b70a.png">
-
-## Tech
-
-xoAR is built from a variety of front-end web technologies including HTML, A-Frame, CSS, Materialize, JavaScript, jQuery, and AR.js. Across both the 2D and 3D game embodiments, the core markup structure and styling are done in HTML, CSS, and Materialize, and the tic-tac-toe game logic is driven by JavaScript/jQuery. Additionally, in the 3D game embodiment, A-Frame is leveraged in order to provide robust, cross-platform AR visual components (e.g., tic-tac-toe board and X's & O's) and the rendering of such components is provided for by AR.js. For your reference, we have provided links to A-Frame and AR.js in case you're curious to learn more!
-
-  https://aframe.io/
   
-  https://github.com/jeromeetienne/AR.js/blob/master/README.md
+## Link
+
+Visit on GitHub:
+
+```sh
+https://nchenari.github.io/ar-tic-tac-toe/index.html
+```
 
 ## Meta
 
