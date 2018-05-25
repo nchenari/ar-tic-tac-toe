@@ -162,7 +162,6 @@ p {
   }
 
 .stick-bottom .restart-index {
-    right: 0;
     bottom: 0;
     position: absolute;
     background-color: #0e100e !important;
@@ -189,7 +188,7 @@ ____________________________________*/
 
 .stick-bottom #restartBtn {
     right: 0;
-    bottom: 0;
+    bottom: 2px;
     position: absolute;
     background-color: #01e6a1;
     color: #0e100e;
@@ -322,5 +321,18 @@ ____________________________________*/
     }
     nav .brand-logo {
         left: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .stick-bottom #restartBtn {
+        left: 35px;
+        bottom: 0px;
+        right: unset;
+    }
+    
+    .stick-bottom .instructions {
+        left: 35px;
+        bottom: 45px;
     }
 }
