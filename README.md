@@ -11,8 +11,6 @@ Additionally, another iOS/Safari quirk we encountered was that the game had to b
 
 For everyone on Android, Windows Phone, etc., AR gameplay should occur without difficulty, but don't hesitate to reach out if you run into any difficulties.
 
-![Tic-Tac-Toe](https://en.wikipedia.org/wiki/Tic-tac-toe#/media/File:Tic_tac_toe.svg)
-
 ## Link
 
 Visit on GitHub:
@@ -21,11 +19,17 @@ Visit on GitHub:
 https://nchenari.github.io/ar-tic-tac-toe/index.html
 ```
 
-## Usage example
+## Gameplay Photos
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+Mobile
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
+![img_5573](https://user-images.githubusercontent.com/37127765/40551341-980b3dde-600a-11e8-9614-1cd4276b1cab.JPG)
+
+![img_5580](https://user-images.githubusercontent.com/37127765/40551380-b8ab35bc-600a-11e8-9bc2-8ac206b699c9.JPG)
+
+Laptop
+
+<img width="1435" alt="screen shot 2018-05-25 at 10 56 13 am" src="https://user-images.githubusercontent.com/37127765/40551401-cda65028-600a-11e8-8461-75bf6261b70a.png">
 
 ## Tech
 
@@ -50,11 +54,3 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
-
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
