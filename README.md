@@ -23,7 +23,9 @@ https://nchenari.github.io/ar-tic-tac-toe/index.html
 
 Mobile
 
-![img_5580](https://user-images.githubusercontent.com/37127765/40551574-5ee68026-600b-11e8-9a9a-76a69e03bfb1.JPG)
+<img width="556" alt="screen shot 2018-05-25 at 11 05 21 am" src="https://user-images.githubusercontent.com/37127765/40551655-977938d4-600b-11e8-8540-66a1b58bfc7e.png">
+
+<img width="649" alt="screen shot 2018-05-25 at 11 07 50 am" src="https://user-images.githubusercontent.com/37127765/40551804-f499a5f8-600b-11e8-904e-fa17734012a2.png">
 
 Laptop
 
