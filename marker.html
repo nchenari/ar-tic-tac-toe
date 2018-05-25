@@ -9,14 +9,14 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
-    <title>Tic Tac Toe</title>
+    <title>xoAR | Marker</title>
 </head>
-<body>
+<body class="background">
     <nav>
         <div class="nav-wrapper container">
             <a href="index.html" class="brand-logo">xoAR</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-small-and-down">
+            <ul class="left hide-on-small-and-down">
                 <li><a href="marker.html">AR Marker</a></li>
                 <li><a href="ar.html">AR Tic Tac Toe</a></li>
             </ul>
@@ -26,19 +26,15 @@
         <li><a class="sidenav-link-odd" href="marker.html">AR Marker</a></li>
         <li><a class="sidenav-link-even" href="ar.html">AR Tic Tac Toe</a></li>
     </ul>
-    <div class="background">
-        <div class=".container">
-            <img class="marker" src="assets/images/hiro.jpeg">
-        </div>
+    <div class="container">
+        <img class="marker" src="assets/images/hiro.jpeg">
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script>
-
         $(document).ready(function(){
             $('.sidenav').sidenav();
         });
-       
     </script>
 </body>
 </html>

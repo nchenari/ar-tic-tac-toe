@@ -7,7 +7,7 @@ nav {
 nav ul {
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 80px;
+    margin-left: 110px;;
 }
 
 nav ul a {
@@ -24,33 +24,6 @@ a.brand-logo {
     font-weight: 900;
 }
 
-.stick {
-    width: 100%;
-    position: fixed;
-    right: 20px !important;
-    top: 55px;
-}
-
-.ar-brand-logo{
-    border: 0;
-    bottom: 0;
-    cursor: pointer !important;
-    min-width: 50px;
-    min-height: 30px;
-    padding-right: 5%;
-    padding-top: 4%;
-    position: absolute;
-    right: 0;
-    transition: background-color .05s ease;
-    -webkit-transition: background-color .05s ease;
-    z-index: 9999;
-}
-
-.sidenav {
-    width: 220px;
-    background-color: #e7fff8;
-}
-
 @-webkit-keyframes hvr-ripple-out {
     100% {
       top: -12px;
@@ -60,6 +33,7 @@ a.brand-logo {
       opacity: 0;
     }
   }
+
   @keyframes hvr-ripple-out {
     100% {
       top: -12px;
@@ -71,7 +45,6 @@ a.brand-logo {
   }
 
   .hvr-grow {
-    font-color: lightgrey;
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -82,13 +55,23 @@ a.brand-logo {
     -webkit-transition-property: transform;
     transition-property: transform;
   }
+
   .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
   }
 
+  .nav-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+}
 /* Sidenav Styles
 ____________________________________*/
+.sidenav {
+    width: 220px;
+    background-color: #e7fff8;
+}
+
 .sidenav-even {
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
@@ -96,9 +79,18 @@ ____________________________________*/
 
 /* Traditional Tic Tac Toe Styles
 ____________________________________*/
+h1 {
+    margin: 0;
+}
+
+p {
+    text-align: center;
+}
+
 .background {
     background: url(https://www.toptal.com/designers/subtlepatterns/patterns/whirlpool.png);;
     background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/whirlpool.png);
+    background-size: cover;
     background-position-x: initial;
     background-position-y: initial;
     background-size: initial;
@@ -108,16 +100,17 @@ ____________________________________*/
     background-origin: initial;
     background-clip: initial;
     background-color: initial;
-    padding-bottom: 110px;
+    min-height: 100%;
 }
 
-p {
+.special-col {
     text-align: center;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 960px;
+.special-text {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .tic-tac-toe {
@@ -128,6 +121,7 @@ p {
 
 .row {
     margin-bottom: 0;
+    padding-left: 5%;
 }
 
 .row .col.s4 {
@@ -135,6 +129,12 @@ p {
     margin-left: auto;
     left: auto;
     right: auto;
+}
+
+.t-switch label {
+    font-family: 'Roboto', sans-serif;
+    color: #01e6a1;
+    font-size: medium;
 }
 
 .size {
@@ -153,9 +153,103 @@ p {
     padding-bottom: 100%;
   }
 
+  .switch label .lever {
+      background-color: lightgray;
+  }
 
+  .switch label .lever:after {
+      background-color: grey;
+  }
+
+.stick-bottom .restart-index {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #0e100e !important;
+    color: #01e6a1 !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.stick-bottom .instructions-index {
+    background-color: #0e100e !important;
+    color: #01e6a1 !important;
+}
 /* AR Tic Tac Toe Styles
 ____________________________________*/
+#arjsDebugUIContainer, .a-enter-vr-button {
+    display: none;
+}
+
+.stick-top #twoPlayerSwitch {
+    right: 0;
+    position: absolute;
+}
+
+.stick-bottom #restartBtn {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #01e6a1;
+    color: #0e100e;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.stick-bottom .instructions {
+    left: 35px;
+    bottom: 0;
+    position: absolute;
+    padding: 10px 10px 10px 10px;
+    background-color: #01e6a1; 
+    color: #0e100e;;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.ar-switch label {
+    font-family: 'Roboto', sans-serif;
+    color: #0e100e;
+    font-size: medium;
+}
+
+.stick-top {
+    background-color: #01e6a1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.stick-bottom {
+    width: 100%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.ar-brand-logo {
+    font-family: 'Modern Antiqua', cursive;
+    font-size: 2.7rem;
+    font-weight: 900;
+    color: #0e100e;
+    border: 0;
+    bottom: 0;
+    cursor: pointer !important;
+    min-width: 50px;
+    min-height: 30px;
+    padding-right: 0;
+    padding-top: 0;
+    position: absolute;
+    left: 0;
+    transition: background-color .05s ease;
+    -webkit-transition: background-color .05s ease;
+    z-index: 9999;
+} 
+
 .ar-nav {
     position: fixed; 
     top: 0; 
@@ -168,7 +262,7 @@ ____________________________________*/
 ____________________________________*/
 .marker {
     max-width: 75%;
-    padding-top: 25px;
+    padding-top: 90px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -187,9 +281,18 @@ ____________________________________*/
     }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 350px) {
     .tic-tac-toe {
         width: 93%;
+    }
+    .row {
+        padding-left: 3%;
+    }
+    .size {
+        margin-right: 6px;
+    }
+    .t-switch label {
+        font-size: small;
     }
 }
 
@@ -207,3 +310,17 @@ ____________________________________*/
     }
 }
 
+@media only screen and (max-width: 708px) {
+    nav a.sidenav-trigger {
+        display: block;
+        margin-left: 0 !important;
+        margin-right: 18px;
+        top: 2px;
+    }
+    .hide-on-small-and-down {
+        display: none !important;
+    }
+    nav .brand-logo {
+        left: 40px !important;
+    }
+}

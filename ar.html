@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua|Teko" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua|Roboto" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
         <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
         <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
         <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
-        <!-- ar game logic -->
         <script src="assets/javascript/ar.js"></script>
-
+        <title>Tic Tac Toe | AR</title>
   </head>
   <body>
         <a-assets>
@@ -30,11 +34,20 @@
             </a-marker>
         <a-entity camera></a-entity>
         </a-scene>
-        <div class="stick" aframe-injected>
-                <a href="index.html" class="brand-logo ar-brand-logo" aframe-injected>xoAR</a>
+        <nav class="stick-top" aframe-injected>
+            <div class="nav-wrapper container">
+                <a href="index.html" class="ar-brand-logo" aframe-injected>xoAR</a>
+                <ul class="right">
+                    <li>
+                        <div id = "twoPlayerSwitch" class="switch ar-switch"><label>1P<input type="checkbox"><span class="lever"></span>2P</label></div>
+                    </li>
+                </ul>
             </div>
-        <br>
-        <!-- simple text for game instructions -->
-        <div class="instructions">Instructions</div>
-  </body>
+        </nav>
+        <div class="stick-bottom">
+            <div class="instructions">Instructions</div>
+            <a id="restartBtn" class="waves-effect waves-light btn-small hvr-grow"><i class="material-icons left">replay</i>Restart</a>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</body>
 </html>
