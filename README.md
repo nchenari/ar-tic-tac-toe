@@ -9,7 +9,7 @@ For those of you playing on iOS, there are some caveats for AR gameplay. Namely,
 
 Additionally, another iOS/Safari quirk we encountered was that the game had to be explicitly opened in Safari, as opposed to jumping into Safari through a third party application such as Slack. 
 
-For everyone on Android, Windows Phone, etc., AR gameplay should occur without difficulty, but do not hesitate to reach out if you run into any difficulties..
+For everyone on Android, Windows Phone, etc., AR gameplay should occur without difficulty, but do not hesitate to reach out if you run into any problems..
 
 ## Tech
 
