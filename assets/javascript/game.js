@@ -23,6 +23,8 @@ var currentPlayer = X; // X starts the game
 var withComp = true; // default play with computer
 var gameOver = false;
 
+var moveAllowed = true; // block move when appropriate
+
 var userPosition; // number
 var elemUserPos; // html element
 
@@ -58,7 +60,7 @@ $("#restartBtn").on("click", function() {
 $(".tic-tac-toe").on("click", ".position", function() {
     console.log("square on board clicked");
 
-    if (gameOver == false) {
+    if (gameOver == false && moveAllowed == true) {
         elemUserPos = $(this);
         var posString = elemUserPos.attr('id');
         // convert position string from id to number
@@ -88,6 +90,9 @@ function userPlay() {
     // draw player symbol at position
     draw(userPosition);
 
+    // block move until ready
+    moveAllowed = false;
+
     // check to see if winning move
     var winCheck = checkWin(currentPlayer);
     console.log("win check: " + winCheck + " (0 is not a win)");
@@ -114,6 +119,7 @@ function userPlay() {
         // set delay between user move and computer move (900 miliseconds)
         setTimeout(compPlay, 900);
     } else {
+        moveAllowed = true;
         setTimeout(displayTurn, 600);
     }
     
@@ -137,6 +143,7 @@ function compPlay() {
         var winCheck = checkWin(currentPlayer);
         console.log("win check: " + winCheck + " (0 is not a win)");
 
+   
         if (winCheck != 0) {
             gameOver = true;
             console.log(((currentPlayer == X) ? 'X': 'O') + " wins! game over.");
@@ -151,6 +158,9 @@ function compPlay() {
 
         // flip from current player
         currentPlayer *= -1; 
+
+        // allow user move
+        moveAllowed = true;
 
         setTimeout(displayTurn, 400);
     }
